@@ -1,0 +1,33 @@
+.header__field {
+  background-color: white;
+  height: 109px;
+  width: 100%;
+}
+
+.header__content {
+  width: 960px;
+  height: 100%;
+  margin: auto;
+}
+
+.header__menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+
+.header__menu-a {
+  color: black;
+  text-decoration: none;
+
+  font-size: 14px;
+}
+
+.header__menu-a:hover {
+  color: blue;
+}
+
+.header__menu_logo {
+  font-size: 40px;
+}
