@@ -1,0 +1,25 @@
+.h_1{
+    color:red;
+}
+
+.header1{
+  background-color: Black;
+}
+.Headerbackground {
+  background-color: rgb(0, 0, 0);
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 1260px;
+  height: 80px;
+  z-index: 24;
+}
+.Footerbackground {
+  background-color: rgb(0, 0, 0);
+  position: absolute;
+  left: 0px;
+  top: 1295px;
+  width: 1260px;
+  height: 60px;
+  z-index: 3;
+}
