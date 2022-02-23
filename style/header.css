@@ -28,6 +28,7 @@
   color: blue;
 }
 
-.header__menu_logo {
+.header__menu-a_logo {
   font-size: 40px;
+  font-weight: bold;
 }
