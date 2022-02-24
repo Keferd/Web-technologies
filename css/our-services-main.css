@@ -1,0 +1,50 @@
+.main-content{
+  width: 960px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+}
+.main-head{
+  font-size: 44px;
+  margin: auto;
+  font-family: "Myriad Pro";
+  align-items: center;
+  height: 130px;
+  width: auto;
+  display: flex;
+}
+.main-separator{
+  width: 150px;
+  height: 0px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.302);
+  margin: auto;
+  margin-top: 30px;
+  margin-bottom:30px;
+}
+.main-after-head{
+  font-size: 14px;
+  font-family: "OpenSans";
+  text-align: center;
+  width: 742px;
+  padding-bottom: 63px;
+}
+.two-column{
+  display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.two-column-element {
+    display: flex;
+    width: 420px;
+    margin-bottom: 40px;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: auto;
+}
+.services-image{
+  padding-right:16px;
+  width: 47px;
+  height: 100%;
+}
