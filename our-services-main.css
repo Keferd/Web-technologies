@@ -35,12 +35,16 @@
     justify-content: space-between;
 }
 
-.two-column-element{
-  display: flex;
-  align-items: flex-start;
-  width: 460px;
-  margin-bottom: 40px;
+.two-column-element {
+    display: flex;
+    width: 420px;
+    margin-bottom: 40px;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: auto;
 }
 .services-image{
   padding-right:16px;
+  width: 47px;
+  height: 100%;
 }
