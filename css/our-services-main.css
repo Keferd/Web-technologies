@@ -1,10 +1,14 @@
-.main-content{
+.main__content{
   width: 960px;
   height: auto;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
 }
-.main-head{
+
+.main__head{
   font-size: 44px;
   margin: auto;
   font-family: "Myriad Pro";
@@ -13,7 +17,7 @@
   width: auto;
   display: flex;
 }
-.main-separator{
+.main__separator{
   width: 150px;
   height: 0px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.302);
@@ -21,21 +25,21 @@
   margin-top: 30px;
   margin-bottom:30px;
 }
-.main-after-head{
+.main__after-head{
   font-size: 14px;
   font-family: "OpenSans";
   text-align: center;
   width: 742px;
   padding-bottom: 63px;
 }
-.two-column{
+.main__two-column{
   display: flex;
     width: 100%;
     flex-wrap: wrap;
     justify-content: space-between;
 }
 
-.two-column-element {
+.main__two-column__element {
     display: flex;
     width: 420px;
     margin-bottom: 40px;
@@ -43,7 +47,7 @@
     flex-wrap: wrap;
     height: auto;
 }
-.services-image{
+.main__two-column__element__image{
   padding-right:16px;
   width: 47px;
   height: 100%;
