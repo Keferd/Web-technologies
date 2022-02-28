@@ -33,7 +33,7 @@
   margin: auto;
   margin-bottom: 60px;
 }
-.main__content_separete{
+.main__content-separete{
   width: 200px;
   height: 0px;
   border-bottom: 1px solid grey;
@@ -41,11 +41,11 @@
   margin-top: 30px;
   margin-bottom:30px;
 }
-.main__content_separete2{
-  width: 200px;
+.main__content-separete_2{
+  /* width: 200px;
   height: 0px;
   border-bottom: 1px solid grey;
-  margin: auto;
+  margin: auto; */
   margin-top:33px;
   margin-bottom: 60px;
 }
