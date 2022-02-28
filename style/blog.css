@@ -37,7 +37,7 @@
 .blog__content_separete{
   width: 200px;
   height: 0px;
-  border: 1px solid grey;
+  border-bottom: 1px solid grey;
   margin: auto;
   margin-top: 30px;
   margin-bottom:30px;
@@ -45,7 +45,7 @@
 .blog__content_separete2{
   width: 200px;
   height: 0px;
-  border: 1px solid grey;
+  border-bottom: 1px solid grey;
   margin: auto;
   margin-top:33px;
   margin-bottom: 60px;
