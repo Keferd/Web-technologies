@@ -1,0 +1,73 @@
+.homepage-about__field {
+  background-color: white;
+  background-image: url("../img/background/about.png");
+  background-repeat: repeat;
+  height: 435px;
+}
+
+.homepage-about__content {
+  width: 960px;
+  height: 100%;
+  margin: auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.homepage-about__partition {
+  height: 0px;
+  width: 150px;
+  border-bottom: 1px solid #000000;
+}
+
+.homepage-about__info {
+  height: 50%;
+  width: 840px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  text-align: center;
+}
+
+.homepage-about__h2 {
+  font-size: 44px;
+}
+
+.homepage-about__text {
+  font-size: 14px;
+  color: #616060;
+}
+
+.homepage-about__points {
+  height: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.homepage-about__point {
+  width: 125px;
+  height: 100px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.homepage-about__point:hover {
+  fill: blue;
+  color: blue;
+  font-weight: bold;
+}
+
+.homepage-about__point:hover svg {
+  width: 70px;
+  height: 70px;
+
+  transition: 0.5s;
+}
