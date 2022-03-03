@@ -70,7 +70,7 @@
   height: 146px; */
 }
 .main__content_image{
-  background-image: url('social/Gregory.png');
+  background-image: url('../../img/blog/Gregory.png');
   display: flex;
   align-items: center;
   height: 300px;
