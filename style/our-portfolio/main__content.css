@@ -1,7 +1,6 @@
 .main__content-header p {
  color: black;
  font-size: 44px;
- font-family: "OpenSans";
  text-align: center;
 }
 .main__content-center  {
@@ -11,7 +10,6 @@
 }
 .main__content-center p {
   font-size: 14px;
-  font-family: "OpenSans";
   text-align: center;
 }
 .main__content-separete{

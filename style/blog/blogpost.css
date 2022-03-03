@@ -1,12 +1,8 @@
-*{
-  margin: 0;
-  padding: 0;
-}
 .header {
   background-color: rgb(0, 0, 0);
   height: 80px;
-  font-family: arial;
 }
+
 .header__content{
   width: 960px;
   height: 100%;
@@ -15,12 +11,20 @@
   align-items: center;
   justify-content: space-between;
 }
+
 .header__a{
   font-size: 14px;
   color:white;
   width: 100px;
   text-align: center;
+
+  text-decoration: none;
 }
+
+.header__a:hover {
+  color: blue;
+}
+
 .header__a_wds {
   font-size: 40px;
   font-weight: bold;
@@ -33,6 +37,7 @@
   margin: auto;
   margin-bottom: 60px;
 }
+
 .main__content-separete{
   width: 200px;
   height: 0px;
@@ -41,14 +46,12 @@
   margin-top: 30px;
   margin-bottom:30px;
 }
+
 .main__content-separete_2{
-  /* width: 200px;
-  height: 0px;
-  border-bottom: 1px solid grey;
-  margin: auto; */
   margin-top:33px;
   margin-bottom: 60px;
 }
+
 .main__content_fs1{
     font-size: 44px;
     color:black;
@@ -56,19 +59,20 @@
     margin-bottom: 60px;
     margin-top: 60px;
 }
+
 .main__content_fs3{
     font-size: 20px;
     color:black;
     text-align: center;
     margin-top: 58px;
 }
+
 .main__content_fs2{
   font-size: 14px;
   text-align: center;
   margin-top: 31px;
-  /* width: 950px;
-  height: 146px; */
 }
+
 .main__content_image{
   background-image: url('../../img/blog/Gregory.png');
   display: flex;
@@ -81,16 +85,11 @@
   margin-bottom: 40px;
 }
 
-
-
-
-
-
-
 .footer {
   background-color: rgb(0, 0, 0);
   height: 60px;
 }
+
 .footer__content{
   width: 960px;
   height: 100%;
@@ -99,9 +98,11 @@
   justify-content: space-between;
   margin: auto;
 }
+
 .footer__media{
   display: flex;
 }
+
 .footer__c {
   width: 25px;
   height: 25px;
@@ -109,22 +110,26 @@
 }
 
 .footer__c_Google{
-  background-image: url('social/google.png');
+  background-image: url('../../img/social/google.png');
 }
+
 .footer__c_RSS {
-  background-image: url('social/RSS.png');
+  background-image: url('../../img/social/RSS.png');
 }
+
 .footer__c_Pinterest {
-  background-image: url('social/pinterest.png');
+  background-image: url('../../img/social/pinterest.png');
 }
+
 .footer__c_Facebook {
-  background-image: url('social/facebook.png');
+  background-image: url('../../img/social/facebook.png');
 }
+
 .footer__c_Twitter {
-  background-image: url('social/twitter.png');
+  background-image: url('../../img/social/twitter.png');
 }
+
 .footer__rights{
-  font-family:arial;
   font-size:12px;
   color:rgb(87, 87, 87);
 }
