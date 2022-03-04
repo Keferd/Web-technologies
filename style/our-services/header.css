@@ -13,6 +13,8 @@
   height: 100%;
   margin: auto;
   align-items: center;
+
+  text-align: center;
 }
 .header__text{
   font-size: 14px;
@@ -20,6 +22,8 @@
   text-align: center;
   color: white;
   text-decoration: none;
+
+  width: 100px;
 }
 
 .header__text:hover {
@@ -29,4 +33,5 @@
 .Wamuu {
   font-size: 40px;
   text-align: center;
+  width: 180px;
 }
