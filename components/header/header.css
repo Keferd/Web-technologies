@@ -20,10 +20,13 @@
 }
 
 .header__menu-a {
+  width: 100px;
+  text-align: center;
+
   color: white;
   text-decoration: none;
+
   font-size: 14px;
-  width: 100px;
 }
 
 .header__menu-a:hover {
@@ -31,7 +34,8 @@
 }
 
 .header__menu-a_logo {
-  width: 180px;
   font-size: 40px;
   font-weight: bold;
+
+  width: 180px;
 }
