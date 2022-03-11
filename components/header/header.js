@@ -9,7 +9,7 @@ class Header {
                 <a class="header__menu-a" href="our-services.html">СЕРВИСЫ</a>
                 <a class="header__menu-a" href="our-portfolio.html">СЕМЬЯ</a>
                 <a class="header__menu-a header__menu-a_logo" href="index.html">WAMUU</a>
-                <a class="header__menu-a" href="">НАША КОМАНДА</a>
+                <a class="header__menu-a" href="team.html">НАША КОМАНДА</a>
                 <a class="header__menu-a" href="blog.html">АНЕКДОТЫ</a>
                 <a class="header__menu-a" href="contact-us.html">КОНТАКТЫ</a>
               </div>

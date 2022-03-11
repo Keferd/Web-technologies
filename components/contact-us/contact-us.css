@@ -40,3 +40,80 @@
   font-size: 14px;
   color: #616060;
 }
+
+.contact-us__columns {
+  display: flex;
+  justify-content: space-between;
+}
+
+.contact-us__column {
+  width: 48%;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-us__form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-us__column-h2 {
+  margin-bottom: 15px;
+}
+
+.contact-us__column-p {
+  margin-bottom: 20px;
+  color: grey;
+}
+
+.contact-us__input-text {
+  margin-bottom: 10px;
+  height: 40px;
+  border: none;
+  background-color: #edf1f2;
+  font-size: 14px;
+  padding-left: 10px;
+  color: grey;
+}
+
+.contact-us__textarea {
+  margin-bottom: 10px;
+  height: 220px;
+  border: none;
+  background-color: #edf1f2;
+  font-size: 14px;
+  padding-left: 10px;
+  padding-top: 10px;
+  resize: none;
+}
+
+.contact-us__input-submit {
+  width: 230px;
+  height: 40px;
+  border: none;
+  background-color: #2980b9;
+  color: white;
+
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.contact-us__input-submit:hover {
+  cursor: pointer;
+  border: 2px solid black;
+}
+
+.contact-us__address {
+  margin-bottom: 20px;
+  line-height: 1.25;
+  color: grey;
+}
+
+
+
+.contact-us__map {
+  height: 190px;
+  width: 100%;
+  background-color: gray;
+}
