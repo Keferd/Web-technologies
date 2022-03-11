@@ -1,0 +1,42 @@
+.contact-us__field {
+  height: 800px;
+}
+
+.contact-us__content {
+  width: 960px;
+  height: 100%;
+  margin: auto;
+
+  /* display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around; */
+}
+
+.contact-us__partition {
+  height: 0px;
+  width: 150px;
+  border-bottom: 1px solid #000000;
+}
+
+.contact-us__info {
+  height: 250px;
+  width: 840px;
+
+  margin: auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  text-align: center;
+}
+
+.contact-us__h1 {
+  font-size: 44px;
+}
+
+.contact-us__text {
+  font-size: 14px;
+  color: #616060;
+}
