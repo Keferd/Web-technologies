@@ -24,14 +24,15 @@
     /* transform: translateX(100px);
     animation-timing-function: ease-in;
     opacity: 1; */
-    animation: bounce-top 2s infinite both;
+    animation: bounce-top 9s infinite both;
 }
 @keyframes bounce-top {
-  /* 0% {
-    transform: translateX(-45px);
+  0% {
+    /* transform: translateX(-45px); */
+    transform: translateX(-1400px);
     animation-timing-function: ease-in;
     opacity: 1;
-  } */
+  }
   /* 24% {
     opacity: 1;
   }
@@ -59,8 +60,8 @@
     animation-timing-function: ease-out;
   } */
   100% {
-    transform: translateX(100px);
-    animation-timing-function: ease-out;
+    transform: translateX(1400px);
+    animation-timing-function: ease-in;
     opacity: 1;
   }
 }
