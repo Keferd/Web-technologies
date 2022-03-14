@@ -14,11 +14,55 @@
 }
 
 .blog__content_fs1{
-    font-size: 44px;
+    /*font-size: 44px;*/
+    font-size: 90px;
+    font-weight: bold;
     color:black;
     text-align: center;
     margin-bottom: 60px;
     margin-top: 60px;
+    /* transform: translateX(100px);
+    animation-timing-function: ease-in;
+    opacity: 1; */
+    animation: bounce-top 2s infinite both;
+}
+@keyframes bounce-top {
+  /* 0% {
+    transform: translateX(-45px);
+    animation-timing-function: ease-in;
+    opacity: 1;
+  } */
+  /* 24% {
+    opacity: 1;
+  }
+  40% {
+    transform: translateX(-24px);
+    animation-timing-function: ease-in;
+  }
+  65% {
+    transform: translateX(-12px);
+    animation-timing-function: ease-in;
+  }
+  82% {
+    transform: translateX(-6px);
+    animation-timing-function: ease-in;
+  }
+  93% {
+    transform: translateX(-4px);
+    animation-timing-function: ease-in;
+  }
+  25%,
+  55%,
+  75%,
+  87% {
+    transform: translateX(0px);
+    animation-timing-function: ease-out;
+  } */
+  100% {
+    transform: translateX(100px);
+    animation-timing-function: ease-out;
+    opacity: 1;
+  }
 }
 
 .blog__content_fs3{
