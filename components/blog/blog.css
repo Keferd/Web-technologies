@@ -50,10 +50,11 @@
   max-height: 240px;
   max-width: 460px;
   border-radius: 50px;
+  transition: 0.9s;
 }
 .blog__content-image:hover{
   max-height: 340px;
   max-width: 560px;
   border-radius: 0px;
-  transition: 0.5s;
+  transition: 0.9s;
 }
