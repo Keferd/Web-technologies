@@ -61,6 +61,19 @@
         }
       }
     </script>
+    <script>
+      function team_table_sort2(n){
+        let table = document.getElementById("team-table");
+        let rows = table.getElementsByTagName("TR");
+        for(let i = 0; i < rows.length - 1; i++){
+          for(let j = 0; j < rows.length - 1; j++){
+            if(rows[i].getElementsByTagName("TD")[n] < rows[j].getElementsByTagName("TD")[n]){
+              
+            }
+          }
+        }
+      }
+    </script>
 
     <script src="components/footer/footer.js"></script>
     <link rel="stylesheet" href="components/footer/footer.css">

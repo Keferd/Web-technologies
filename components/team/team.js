@@ -15,8 +15,8 @@ class Team {
             <tr>
               <th onclick="team_table_sort(0)">№</th>
               <th onclick="team_table_sort(1)">Имя</th>
-              <th onclick="team_table_sort(2)">Фамилия</th>
-              <th onclick="team_table_sort(3)">Другое</th>
+              <th onclick="team_table_sort2(2)">Фамилия</th>
+              <th onclick="team_table_sort2(3)">Другое</th>
             </tr>
             <tr>
               <td>1</td>
