@@ -5,7 +5,7 @@ class Contact_us {
           <div class="contact-us__field">
             <div class="contact-us__content">
               <div class="contact-us__info">
-                <h1 class="contact-us__h1">Что любит Шлёпа?</h2>
+                <h1 class="contact-us__h1">Контакты Шлёпы</h2>
                 <div class="contact-us__partition"></div>
                 <p class="contact-us__text">Nunc ac lorem vel arcu ultricies volutpat at nec arcu. Ut tempus dignissim est, at iaculis massa blandit commodo. In vitae nunc eget arcu aliquam hendrerit a vel dui. Aliquam a sagittis neque, nec congue eros.</p>
               </div>

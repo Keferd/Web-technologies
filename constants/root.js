@@ -7,3 +7,4 @@ const ROOT_SERVICES = document.getElementById('services');
 const ROOT_FAMILY = document.getElementById('family');
 const ROOT_BLOG = document.getElementById('blog');
 const ROOT_CONTACTUS = document.getElementById('contact-us');
+const ROOT_TEAM = document.getElementById('team');
