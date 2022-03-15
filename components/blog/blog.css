@@ -95,4 +95,5 @@ background: linear-gradient(40deg,#EECFBA, #C5DDE8);
   max-width: 560px;
   border-radius: 10px;
   transition: 0.9s;
+  opacity: 0.1;
 }

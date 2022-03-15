@@ -25,6 +25,7 @@ class Blog {
                 <div class="blog__img-container">
                   <img class="blog__content-image" src="img/blog/Gregory.png" alt="Shlepa">
                 </div>
+
                 <p style="font-weight:bold;">Появился, значит, в Зоне Чёрный сталкер.</p>
                 <br>
                 <p>Появился, значит, в Зоне Чёрный сталкер. К лагерю ночью повадился ходить и там сует руку в палатку и говорит: «Водички попить!»
