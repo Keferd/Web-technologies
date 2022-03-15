@@ -1,6 +1,7 @@
 class Blog {
   render(){
     const html = `
+      <div class="blog">
         <div class="blog__content">
 
           <div class="blog__content_fs1">
@@ -21,7 +22,9 @@ class Blog {
 
             <div class="blog__pages">
               <div class="blog__content-block">
-                <img class="blog__content-image" src="img/blog/Gregory.png" alt="Shlepa">
+                <div class="blog__img-container">
+                  <img class="blog__content-image" src="img/blog/Gregory.png" alt="Shlepa">
+                </div>
                 <p style="font-weight:bold;">Появился, значит, в Зоне Чёрный сталкер.</p>
                 <br>
                 <p>Появился, значит, в Зоне Чёрный сталкер. К лагерю ночью повадился ходить и там сует руку в палатку и говорит: «Водички попить!»
@@ -30,7 +33,9 @@ class Blog {
                 <!-- <a href="blogpost.html">Read more</a> -->
               </div>
               <div class="blog__content-block">
-                <img class="blog__content-image" src="img/blog/Gregory.png" alt="Shlepa">
+                <div class="blog__img-container">
+                  <img class="blog__content-image" src="img/blog/Gregory.png" alt="Shlepa">
+                </div>
                 <p style="font-weight:bold;">Долг и свобода</p>
                 <br>
                 <p>Встречаются двое сталкеров, ну и один говорит:
@@ -43,7 +48,9 @@ class Blog {
                 <!-- <a href="blogpost.html">Read more</a> -->
               </div>
               <div class="blog__content-block">
-                <img class="blog__content-image" src="img/blog/Gregory.png" alt="Shlepa">
+                <div class="blog__img-container">
+                  <img class="blog__content-image" src="img/blog/Gregory.png" alt="Shlepa">
+                </div>
                 <p style="font-weight:bold;">Сталкер и доктор</p>
                 <br>
                 <p>Сталкер пришел к доктору и говорит:
@@ -53,7 +60,9 @@ class Blog {
                 <!-- <a href="blogpost.html">Read more</a> -->
               </div>
               <div class="blog__content-block">
-                <img class="blog__content-image" src="img/blog/Gregory.png" alt="Shlepa">
+                <div class="blog__img-container">
+                  <img class="blog__content-image" src="img/blog/Gregory.png" alt="Shlepa">
+                </div>
                 <p style="font-weight:bold;">Заблудившийся</p>
                 <br>
                 <p>Заблудился как-то долговец и кричит:— Люди, отзовитесь, кто-нибудь! Аууу! Тут его кто то догоняет и…
@@ -62,7 +71,9 @@ class Blog {
                 <!-- <a href="blogpost.html">Read more</a> -->
               </div>
               <div class="blog__content-block">
-                <img class="blog__content-image" src="img/blog/Gregory.png" alt="Shlepa">
+                <div class="blog__img-container">
+                  <img class="blog__content-image" src="img/blog/Gregory.png" alt="Shlepa">
+                </div>
                 <p style="font-weight:bold;">Ходячая аномалия</p>
                 <br>
                 <p>Бродит, говорят, по зоне ходячая аномалия — непьющий и некурящий сталкер.
@@ -71,7 +82,9 @@ class Blog {
                 <!-- <a href="blogpost.html">Read more</a> -->
               </div>
               <div class="blog__content-block">
-                <img class="blog__content-image" src="img/blog/Gregory.png" alt="Shlepa">
+                <div class="blog__img-container">
+                  <img class="blog__content-image" src="img/blog/Gregory.png" alt="Shlepa">
+                </div>
                 <p style="font-weight:bold;">Признание</p>
                 <br>
                 <p>У блок-поста прихватили новичка-сталкера и давай пытать:— С какой целью вы пытались проникнуть
@@ -83,6 +96,7 @@ class Blog {
           </div>
 
         </div>
+      </div>
       `;
 
       ROOT_BLOG.insertAdjacentHTML('afterbegin', html);

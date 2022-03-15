@@ -22,7 +22,8 @@
 .header__menu-a {
   width: 100px;
   text-align: center;
-
+  font-weight: bold;
+  font-family:inherit;
   color: white;
   text-decoration: none;
 
