@@ -33,6 +33,10 @@
   color: blue;
 }
 
+.header__menu-a:active {
+  color: purple;
+}
+
 .header__menu-a_logo {
   font-size: 40px;
   font-weight: bold;

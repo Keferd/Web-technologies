@@ -80,3 +80,8 @@
   border: 1px solid blue;
   cursor: pointer;
 }
+
+.homepage-banner__button:active {
+  color: purple;
+  border: 1px solid purple;
+}
