@@ -19,7 +19,7 @@ class Banner {
                   <div class="homepage-banner__lines"></div>
                 </div>
               </div>
-              <div class="homepage-banner__area">
+              <div class="homepage-banner__area" id="homepage__secret">
                 <div class="homepage-banner__button">Нажмите сюда</div>
               </div>
             </div>

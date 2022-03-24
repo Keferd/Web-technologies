@@ -66,9 +66,9 @@
         let table = document.getElementById("team-table");
         let rows = table.getElementsByTagName("TR");
         for(let i = 0; i < rows.length - 1; i++){
-          for(let j = 0; j < rows.length - 1; j++){
-            if(rows[i].getElementsByTagName("TD")[n] < rows[j].getElementsByTagName("TD")[n]){
-
+          for(let j = 0; j < rows.length - i; j++){
+            if(rows[j+1].getElementsByTagName("TD")[n] < rows[j].getElementsByTagName("TD")[n]){
+              rows[j].parentNode.insertBefore(rows[j], rows[j+1]);
             }
           }
         }

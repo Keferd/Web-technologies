@@ -36,3 +36,8 @@
   max-width: 460px;
   max-height: 240px;
 }
+
+.main__content-img:hover {
+  border-radius: 30px;
+  transition: 0.5s;
+}
