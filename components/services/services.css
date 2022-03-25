@@ -47,6 +47,8 @@
   flex-direction: column;
   flex-wrap: wrap;
   height: auto;
+
+  cursor: pointer;
 }
 
 .main__two-column__element__image{
