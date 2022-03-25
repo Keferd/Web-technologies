@@ -1,0 +1,37 @@
+.header__field {
+  background-color: black;
+  height: 109px;
+  width: 100%;
+}
+
+.header__content {
+  width: 960px;
+  height: 100%;
+  margin: auto;
+}
+
+.header__menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+
+  text-align: center;
+}
+
+.header__menu-a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  width: 100px;
+}
+
+.header__menu-a:hover {
+  color: blue;
+}
+
+.header__menu-a_logo {
+  width: 180px;
+  font-size: 40px;
+  font-weight: bold;
+}
