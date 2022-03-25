@@ -25,23 +25,23 @@
 }
 
 .footer__sm-logo_twitter {
-  background-image: url('../img/social/twitter.png');
+  background-image: url('../../img/social/twitter.png');
 }
 
 .footer__sm-logo_facebook {
-  background-image: url('../img/social/facebook.png');
+  background-image: url('../../img/social/facebook.png');
 }
 
 .footer__sm-logo_google {
-  background-image: url('../img/social/google.png');
+  background-image: url('../../img/social/google.png');
 }
 
 .footer__sm-logo_pinterest {
-  background-image: url('../img/social/pinterest.png');
+  background-image: url('../../img/social/pinterest.png');
 }
 
 .footer__sm-logo_rss {
-  background-image: url('../img/social/rss.png');
+  background-image: url('../../img/social/rss.png');
 }
 
 .footer__rights {

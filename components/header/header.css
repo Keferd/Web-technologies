@@ -20,18 +20,31 @@
 }
 
 .header__menu-a {
+  width: 100px;
+  text-align: center;
+  font-weight: bold;
+  font-family:inherit;
   color: white;
   text-decoration: none;
+
   font-size: 14px;
-  width: 100px;
 }
 
 .header__menu-a:hover {
   color: blue;
+  background: linear-gradient(40deg,#EECFBA, #C5DDE8);
+  transition: 2s;
+  border-radius: 100px;
+  color: black;
+}
+
+.header__menu-a:active {
+  color: purple;
 }
 
 .header__menu-a_logo {
-  width: 180px;
   font-size: 40px;
   font-weight: bold;
+
+  width: 180px;
 }

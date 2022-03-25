@@ -4,15 +4,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Сервисы</title>
+    <title>Контакты</title>
     <link href="style/main.css" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="  crossorigin="anonymous"></script>
   </head>
   <body>
 
     <header id="header"></header>
 
-    <main id="services"></main>
+    <main id="contact-us"></main>
 
     <footer id="footer"></footer>
 
@@ -22,15 +21,17 @@
     <script src="components/header/header.js"></script>
     <link rel="stylesheet" href="components/header/header.css">
 
-    <script src="components/services/services.js"></script>
-    <link rel="stylesheet" href="components/services/services.css">
-    <script src="components/services/hidebox.js"></script>
+    <script src="components/contact-us/contact-us.js"></script>
+    <link rel="stylesheet" href="components/contact-us/contact-us.css">
+    <script src="http://api-maps.yandex.ru/2.0/?load=package.full&lang=ru-RU" type="text/javascript"></script>
+    <script src="scripts/map.js"></script>
+    <script src="scripts/contact_us_confirm.js"></script>
 
     <script src="components/footer/footer.js"></script>
     <link rel="stylesheet" href="components/footer/footer.css">
 
     <script type="text/javascript">
-      let header_a = document.getElementById('header__menu-a_services')
+      let header_a = document.getElementById('header__menu-a_contact')
       header_a.style.color = "red";
     </script>
   </body>

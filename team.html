@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Команда</title>
+    <link href="style/main.css" rel="stylesheet">
+  </head>
+  <body>
+
+    <header id="header"></header>
+
+    <main id="team"></main>
+
+    <footer id="footer"></footer>
+
+
+    <script src="constants/root.js"></script>
+
+    <script src="components/header/header.js"></script>
+    <link rel="stylesheet" href="components/header/header.css">
+
+    <script src="components/team/team.js"></script>
+    <link rel="stylesheet" href="components/team/team.css">
+    <script>
+      function team_table_sort(n){
+        var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+        table = document.getElementById("team-table");
+        switching = true;
+        dir = "asc";
+        while (switching) {
+          switching = false;
+          rows = table.getElementsByTagName("TR");
+          for (i = 1; i < (rows.length - 1); i++) {
+            shouldSwitch = false;
+            x = rows[i].getElementsByTagName("TD")[n];
+            y = rows[i + 1].getElementsByTagName("TD")[n];
+            if (dir == "asc") {
+              if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                shouldSwitch= true;
+                break;
+              }
+            } else if (dir == "desc") {
+              if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                shouldSwitch = true;
+                break;
+              }
+            }
+          }
+          if (shouldSwitch) {
+            rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+            switching = true;
+            switchcount ++;
+          } else {
+            if (switchcount == 0 && dir == "asc") {
+              dir = "desc";
+              switching = true;
+            }
+          }
+        }
+      }
+    </script>
+    <script>
+      function team_table_sort2(n){
+        let table = document.getElementById("team-table");
+        let rows = table.getElementsByTagName("TR");
+        for(let i = 0; i < rows.length - 1; i++){
+          for(let j = 0; j < rows.length - i; j++){
+            if(rows[j+1].getElementsByTagName("TD")[n] < rows[j].getElementsByTagName("TD")[n]){
+              rows[j].parentNode.insertBefore(rows[j], rows[j+1]);
+            }
+          }
+        }
+      }
+    </script>
+
+    <script src="components/footer/footer.js"></script>
+    <link rel="stylesheet" href="components/footer/footer.css">
+
+    <script type="text/javascript">
+      let header_a = document.getElementById('header__menu-a_team')
+      header_a.style.color = "red";
+    </script>
+  </body>
+</html>
