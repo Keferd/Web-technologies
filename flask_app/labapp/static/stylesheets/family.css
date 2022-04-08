@@ -1,0 +1,49 @@
+.family__content-header p {
+ color: black;
+ font-size: 44px;
+ text-align: center;
+}
+
+.family__content-center  {
+  margin: auto;
+  width: 756px;
+  margin-bottom: 65px;
+}
+
+.family__content-center p {
+  font-size: 14px;
+  text-align: center;
+}
+
+.family__content-separete{
+  width: 200px;
+  height: 0px;
+  border: 1px solid grey;
+  margin: auto;
+  margin-top: 30px;
+  margin-bottom:30px;
+}
+
+.family__content-media{
+  width: 960px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: auto;
+}
+
+.family__content-block{
+ width: 460px;
+ margin-bottom: 35px;
+ text-align: center;
+}
+
+.family__content-img{
+  max-width: 460px;
+  max-height: 240px;
+}
+
+.family__content-img:hover {
+  border-radius: 30px;
+  transition: 0.5s;
+}

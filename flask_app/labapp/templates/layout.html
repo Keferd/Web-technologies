@@ -1,0 +1,91 @@
+<html>
+
+<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<link href="/static/stylesheets/header.css" rel="stylesheet">
+		<link href="/static/stylesheets/services.css" rel="stylesheet">
+		<link href="/static/stylesheets/footer.css" rel="stylesheet">
+		<link href="/static/stylesheets/main.css" rel="stylesheet">
+		<title>{{title}}</title>
+		<script type="text/javascript" src="/static/javascripts/jquery-3.6.0.min.js"></script>
+</head>
+		<body>
+			{% block banner %}{% endblock %}
+			<!-- <div class="wrapper"> -->
+				<!-- <header>
+					<a href="/"><img src="/static/images/logo.png" alt="Whitesquare logo"></a>
+					<form name="search" class="sinput" action="#" method="get">
+						<input type="search" name="q" placeholder="Search"><button type="submit">GO</button>
+					</form>
+					<div class="heading">
+						<h1 id="headname">{{pname}}</h1>
+					</div>
+				</header> -->
+				<div class="header">
+					<div class="header__field">
+					  <div class="header__content">
+						<div class="header__menu">
+						  <a class="header__menu-a" id="header__menu-a_house" href="index">ДОМ</a>
+						  <a class="header__menu-a" id="header__menu-a_services" href="our-services">СЕРВИСЫ</a>
+						  <a class="header__menu-a" id="header__menu-a_family" href="family">СЕМЬЯ</a>
+						  <a class="header__menu-a header__menu-a_logo" href="index">WAMUU</a>
+						  <a class="header__menu-a" id="header__menu-a_team" href="team">НАША КОМАНДА</a>
+						  <a class="header__menu-a" id="header__menu-a_blog" href="blog">АНЕКДОТЫ</a>
+						  <a class="header__menu-a" id="header__menu-a_contact" href="contact-us">КОНТАКТЫ</a>
+						</div>
+					  </div>
+					</div>
+				  </div>
+
+				<!-- {% if navmenu %}
+					<nav>
+						<ul class="top-menu">
+							{% for item in navmenu %}
+								<li><a href="{{item.addr}}">{{item.name}}</a></li>
+							{% endfor %}
+						</ul>
+					</nav>
+				{% endif %} -->
+			<main id="{{pname}}">
+				{% block content %}{% endblock %}
+			</main>
+			<!-- </div> -->
+			
+
+
+			<!-- <footer>
+				<div class="footer">
+					<div id="social">
+						<h3>SOCIAL NETWORKS</h3>
+						<a href="http://twitter.com/" class="social-icon twitter"></a>
+						<a href="http://google.com/" class="social-icon google"></a>
+					</div>
+					<div id="footer-logo">
+						<a href="/"><img src="/static/images/footer-logo.png" alt="Whitesquare logo"></a>
+					</div>
+				</div>
+			</footer> -->
+			<div class="footer">
+				<div class="footer__field">
+				  <div class="footer__content">
+					<div class="footer__social-media">
+					  <a class="footer__sm-logo footer__sm-logo_twitter"></a>
+					  <a class="footer__sm-logo footer__sm-logo_facebook"></a>
+					  <a class="footer__sm-logo footer__sm-logo_google"></a>
+					  <a class="footer__sm-logo footer__sm-logo_pinterest"></a>
+					  <a class="footer__sm-logo footer__sm-logo_rss"></a>
+					</div>
+					<div class="footer__rights">
+					  <p>© 2014 WebDesign Studio. All rights reserved.</p>
+					  <p>Designed and developed by pcklab.com</p>
+					</div>
+				  </div>
+				</div>
+			  </div>
+
+			<script type="text/javascript" src="/static/javascripts/topmenu.js"></script>
+			<script type="text/javascript" src="/static/javascripts/jqfunc.js"></script>
+		</body>
+</html>

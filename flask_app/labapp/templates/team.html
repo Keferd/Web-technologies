@@ -1,0 +1,104 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+    <div class="team">
+        <div class="team__field">
+        <div class="team__content">
+            <div class="team__info">
+            <h1 class="team__h1">Наша команда</h2>
+            <div class="team__partition"></div>
+            <p class="team__text">Nunc ac lorem vel arcu ultricies volutpat at nec arcu. Ut tempus dignissim est, at iaculis massa blandit commodo. In vitae nunc eget arcu aliquam hendrerit a vel dui. Aliquam a sagittis neque, nec congue eros.</p>
+            </div>
+            <div class="team__">
+            <table class="team__table" border="1" id="team-table">
+            <caption>Состав команды</caption>
+            <tr>
+                <th onclick="team_table_sort(0)">№</th>
+                <th onclick="team_table_sort(1)">Имя</th>
+                <th onclick="team_table_sort2(2)">Фамилия</th>
+                <th onclick="team_table_sort2(3)">Другое</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>3</td>
+                <td>4</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>2</td>
+                <td>5</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>4</td>
+                <td>3</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>5</td>
+                <td>2</td>
+                <td>3</td>
+            </tr>
+            </table>
+        </div>
+        </div>
+        </div>
+     </div>
+    <link rel="stylesheet" href="static/stylesheets/team.css">
+    <script>
+      function team_table_sort(n){
+        var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+        table = document.getElementById("team-table");
+        switching = true;
+        dir = "asc";
+        while (switching) {
+          switching = false;
+          rows = table.getElementsByTagName("TR");
+          for (i = 1; i < (rows.length - 1); i++) {
+            shouldSwitch = false;
+            x = rows[i].getElementsByTagName("TD")[n];
+            y = rows[i + 1].getElementsByTagName("TD")[n];
+            if (dir == "asc") {
+              if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                shouldSwitch= true;
+                break;
+              }
+            } else if (dir == "desc") {
+              if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                shouldSwitch = true;
+                break;
+              }
+            }
+          }
+          if (shouldSwitch) {
+            rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+            switching = true;
+            switchcount ++;
+          } else {
+            if (switchcount == 0 && dir == "asc") {
+              dir = "desc";
+              switching = true;
+            }
+          }
+        }
+      }
+    </script>
+    <script>
+      function team_table_sort2(n){
+        let table = document.getElementById("team-table");
+        let rows = table.getElementsByTagName("TR");
+        for(let i = 0; i < rows.length - 1; i++){
+          for(let j = 0; j < rows.length - i; j++){
+            if(rows[j+1].getElementsByTagName("TD")[n] < rows[j].getElementsByTagName("TD")[n]){
+              rows[j].parentNode.insertBefore(rows[j], rows[j+1]);
+            }
+          }
+        }
+      }
+    </script>
+
+{% endblock %}
