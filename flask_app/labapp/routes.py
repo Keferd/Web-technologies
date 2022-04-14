@@ -222,7 +222,19 @@ def post_contact():
         return bad_request()
     # Иначе отправляем json-ответ
     else:
-        msg = request.json['firstname'] + ", ваш запрос получен !";
+        msg = request.json['firstname'] + ", ваш запрос получен !"
+        return json_response({ 'message': msg })
+
+@app.route('/api/contact_request', methods=['POST'])
+def post_contact_r():
+    # Если в запросе нет данных или неверный заголовок запроса (т.е. нет 'application/json'),
+    # или в этом объекте нет, например, обязательного поля 'firstname'
+    if not request.json or not 'fullname' in request.json:
+        # возвращаем стандартный код 400 HTTP-протокола (неверный запрос)
+        return bad_request()
+    # Иначе отправляем json-ответ
+    else:
+        msg = request.json['fullname'] + ", ваш запрос получен !"
         return json_response({ 'message': msg })
 
 """

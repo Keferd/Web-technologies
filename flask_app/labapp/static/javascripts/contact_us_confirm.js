@@ -1,8 +1,9 @@
-function Сontact_UsConfirmDialog() {
-  var result = confirm("Вы отправили запрос по теме: Шлёпа?");
-  if(result)  {
-      alert("Кот!");
-  } else {
-      alert("Не кот!");
-  }
+function Сontact_UsConfirmDialog(message) {
+  // var result = confirm(name +"");
+  // if(result)  {
+  //     alert("Кот!");
+  // } else {
+  //     alert("Не кот!");
+  // }
+  alert(message);
 }

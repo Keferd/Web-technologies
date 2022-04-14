@@ -27,8 +27,8 @@
             <p><input type="submit" id="sendbtn" value="Отправить"></p>
         </form>		
     </section>
-
-    <script type="text/javascript" src="/static/javascripts/formsend.js"></script> -->
+     -->
+    
     <div class="contact-us">
         <div class="contact-us__field">
           <div class="contact-us__content">
@@ -42,10 +42,10 @@
                 <h2 class="contact-us__column-h2">Feel free to drop us a line</h2>
                 <p class="contact-us__column-p">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. </p>
                 <form class="contact-us__form">
-                  <input class="contact-us__input-text" type="text" placeholder="Full name" required>
-                  <input class="contact-us__input-text" type="text" placeholder="E-mail address" required>
-                  <textarea class="contact-us__textarea" placeholder="Message" required></textarea>
-                  <input class="contact-us__input-submit" type="submit" onclick="Сontact_UsConfirmDialog()">
+                  <input class="contact-us__input-text" type="text" placeholder="Full name" name="fullname" required>
+                  <input class="contact-us__input-text" type="text" placeholder="E-mail address" name="email" required>
+                  <textarea class="contact-us__textarea" placeholder="Message" name="message" required></textarea>
+                  <input class="contact-us__input-submit" type="submit">
                 </form>
               </div>
               <div class="contact-us__column">
@@ -70,4 +70,5 @@
       <script src="http://api-maps.yandex.ru/2.0/?load=package.full&lang=ru-RU" type="text/javascript"></script>
       <script src="static/javascripts/map.js"></script>
       <script src="static/javascripts/contact_us_confirm.js"></script>
+      <script type="text/javascript" src="/static/javascripts/formsend.js"></script>
 {% endblock %}
