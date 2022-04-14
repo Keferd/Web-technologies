@@ -16,32 +16,6 @@ import json
 
 # Структура основного навигационнго меню веб-приложения,
 # оформленное в виде массива dict-объектов
-navmenu = [
-    {
-        'name': 'HOME',
-        'addr': '/'
-    },
-    {
-        'name': 'ABOUT US',
-        'addr': '#'
-    },
-    {
-        'name': 'SERVICES',
-        'addr': '#'
-    },
-    {
-        'name': 'PROJECTS',
-        'addr': '#'
-    },
-    {
-        'name': 'MEMBERS',
-        'addr': '#'
-    },
-    {
-        'name': 'CONTACT',
-        'addr': '/contact'
-    },
-]
 
 jokes = [
     {
@@ -182,35 +156,33 @@ services = [
 @app.route('/')
 @app.route('/index')
 def index():
-    imgs = ['img1.jpg', 'img2.jpg']
-    subjs = ["SUBJ_1", "SUBJ_2", "SUBJ_3", "SUBJ_4", "SUBJ_5"]
     # "рендеринг" (т.е. вставка динамически изменяемых данных) index.html и возвращение готовой страницы
-    return render_template('index.html', title='Главная', pname='HOME', navmenu=navmenu, imgs=imgs, subjs=subjs)
+    return render_template('index.html', title='Главная', pname='HOME')
 
 # Обработка запроса к странице contact-us.html
 @app.route('/contact-us')
 def contact_us():
-    return render_template('contact-us.html', title='Контакты', pname='CONTACT', navmenu=navmenu)
+    return render_template('contact-us.html', title='Контакты', pname='CONTACT')
 
 # Обработка запроса к странице blog.html
 @app.route('/blog')
 def blog():
-    return render_template('blog.html', title='Анекдоты', pname='BLOG', navmenu=navmenu, jokes=jokes)
+    return render_template('blog.html', title='Анекдоты', pname='BLOG', jokes=jokes)
 
 # Обработка запроса к странице family.html
 @app.route('/family')
 def family():
-    return render_template('family.html', title='Семья', pname='PORTFOLIO', navmenu=navmenu, cats=cats)
+    return render_template('family.html', title='Семья', pname='PORTFOLIO', cats=cats)
 
 # Обработка запроса к странице our-services.html
 @app.route('/our-services')
 def our_services():
-    return render_template('our-services.html', title='Сервисы', pname='SERVICES', navmenu=navmenu, services=services)
+    return render_template('our-services.html', title='Сервисы', pname='SERVICES', services=services)
 
 # Обработка запроса к странице team.html
 @app.route('/team')
 def team():
-    return render_template('team.html', title='Команда', pname='TEAM', navmenu=navmenu)
+    return render_template('team.html', title='Команда', pname='TEAM')
 
 # Обработка POST-запроса для демонстрации AJAX
 @app.route('/api/contactrequest', methods=['POST'])
