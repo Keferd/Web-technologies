@@ -8,20 +8,20 @@ var sendbtn = document.querySelector(".contact-us__input-submit");    // выб�
 sendbtn.addEventListener("click", function (e) {
     /* Инструкция preventDefault позволяет переопределить стандартное поведение браузера,
     если ее убрать, то браузер по-умолчанию обновит страницу после отправки данных формы */
-    e.preventDefault();
+    //e.preventDefault();
     // Получаем данные полей формы
     let fullname= document.getElementsByName("fullname")[0].value;
     let email = document.getElementsByName("email")[0].value;
     let message = document.getElementsByName("message")[0].value;
-    // let reqtext = document.getElementsByName("reqtext")[0].value
+    
     // Преобразуем полученные данные в JSON
     let formdata = JSON.stringify({ fullname: fullname, email: email, message: message});
     console.log(formdata);
-    let full = formdata["fullname"];
+
+    formparse = JSON.parse(formdata);
+    let full = formparse["fullname"];
     console.log(full);
-    if (formdata['fullname'] == "")
-        alert("Отсутствует имя");
-    else {
+    if (formparse["fullname"] != "" && formparse["email"] != "") {
         // Отправляем запрос через fetch (необходимо выставить соответствующий заголовок (headers)!)
         fetch("/api/contact_request",
         {
@@ -38,7 +38,8 @@ sendbtn.addEventListener("click", function (e) {
                 console.log(data)
                 // let statfield = document.getElementById("statusfield");
                 // statfield.textContent = data.message;
-                Сontact_UsConfirmDialog(data['message'])
+                //Сontact_UsConfirmDialog(data['message'])
+                alert(data['message']);
                 //statfield.textContent.bold();
                 //alert(data.message);
             });
