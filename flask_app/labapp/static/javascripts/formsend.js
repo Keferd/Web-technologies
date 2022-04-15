@@ -8,7 +8,7 @@ var sendbtn = document.querySelector(".contact-us__input-submit");    // выб�
 sendbtn.addEventListener("click", function (e) {
     /* Инструкция preventDefault позволяет переопределить стандартное поведение браузера,
     если ее убрать, то браузер по-умолчанию обновит страницу после отправки данных формы */
-    //e.preventDefault();
+    e.preventDefault();
     // Получаем данные полей формы
     let fullname= document.getElementsByName("fullname")[0].value;
     let email = document.getElementsByName("email")[0].value;
