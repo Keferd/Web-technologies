@@ -5,7 +5,7 @@ from labapp import app, db
 from flask import render_template, make_response, request, Response, jsonify, json
 
 import json
-
+from . import dbservice  
 
 """
 
@@ -183,6 +183,24 @@ def our_services():
 @app.route('/team')
 def team():
     return render_template('team.html', title='Команда', pname='TEAM')
+
+# Обработка GET-запроса на все jokes
+@app.route('/api/jokes', methods=['GET'])
+def get_jokes():
+    jokes = dbservice.get_jokes_all()
+    return json_response(jokes)
+
+# Обработка GET-запроса на все cats
+@app.route('/api/cats', methods=['GET'])
+def get_cats():
+    cats = dbservice.get_cats_all()
+    return json_response(cats)
+
+# Обработка GET-запроса на все jokes
+@app.route('/api/services', methods=['GET'])
+def get_services():
+    services = dbservice.get_services_all()
+    return json_response(services)
 
 # Обработка POST-запроса для демонстрации AJAX
 @app.route('/api/contactrequest', methods=['POST'])

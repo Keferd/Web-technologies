@@ -21,9 +21,8 @@
             </p>
             <br>
 
-            <div class="blog__pages">
-            {% for joke in jokes %}
-                <!-- <figure><img src="/static/images/{{image}}" alt=""></figure> -->
+            <div id="blog__pages" class="blog__pages">
+            <!-- {% for joke in jokes %}
                 <div class="blog__content-block">
                     <div class="blog__img-container">
                     <img class="blog__content-image" src="static/images/blog/Gregory.png" alt="Shlepa">
@@ -33,14 +32,14 @@
                     <p>{{joke['text']}}
                     </p>
                     <br>
-                    <!-- <a href="blogpost.html">Read more</a> -->
                 </div>
-            {% endfor %}
-        </div>
+            {% endfor %} -->
+            </div>
         </div>
 
         </div>
     </div>
     <link rel="stylesheet" href="static/stylesheets/blog.css">
+    <script src="static/javascripts/jokes_request.js"></script>
 
 {% endblock %}
