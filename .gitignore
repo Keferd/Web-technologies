@@ -6,3 +6,4 @@ flask_app/labapp/__pycache__
 flask_app\labapp\__pycache__
 flask_app/labapp/__pycache__/__init__.cpython-39.pyc
 flask_app/labapp/__pycache__/routes.cpython-39.pyc
+*.sqlite
