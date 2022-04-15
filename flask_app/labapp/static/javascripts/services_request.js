@@ -1,8 +1,8 @@
 var pages = document.getElementById("main__two-column");    
 
-this.container = document.createElement('div');
-document.body.appendChild(this.container);
-pages.insertAdjacentElement('beforeend', this.container);
+// this.container = document.createElement('div');
+// document.body.appendChild(this.container);
+// pages.insertAdjacentElement('beforeend', this.container);
 
 document.addEventListener("DOMContentLoaded", () => {
     fetch("/api/services",
@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
         request.json().then(function(data) {
             let services = data['services'];
             for (let id in services){
-                this.container.innerHTML += `
+                pages.innerHTML += `
                     <div class="main__two-column__element">
                     <div class="main__two-column__element__image">
                         <img src="static/images/our-services/` + services[id]['path'] + `">

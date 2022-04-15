@@ -10,7 +10,7 @@
             На даной странице вы можете узнать что вы можете делать на данном сайте, наслаждайтесь.
         </div>
         <div id="main__two-column" class="main__two-column">
-            <!-- {% for service in services %}
+            {% for service in services %}
                 <div class="main__two-column__element">
                     <div class="main__two-column__element__image">
                         <img src="static/images/our-services/{{service['path']}}">
@@ -18,12 +18,12 @@
                     <h3>{{service['name']}}</h3>
                     <p>{{service['text']}}</p>
                 </div>
-            {% endfor %} -->
+            {% endfor %}
         </div>
         </div>
     </main>    
     <link rel="stylesheet" href="static/stylesheets/services.css">
-    <script src="static/javascripts/hidebox.js"></script>
     <script src="static/javascripts/services_request.js"></script>
+    <script src="static/javascripts/hidebox.js"></script>
 
 {% endblock %}
