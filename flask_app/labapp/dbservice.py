@@ -52,9 +52,9 @@ def get_contact_req_by_id(id):
 
 
 # Получаем все запросы по имени автора
-def get_contact_req_by_author(firstname):
+def get_contact_req_by_author(fullname):
     result = []
-    rows = db.session.execute(f"SELECT * FROM contactrequests WHERE firstname = '{firstname}'").fetchall()
+    rows = db.session.execute(f"SELECT * FROM contactrequests WHERE fullname = '{fullname}'").fetchall()
     for row in rows:
         result.append(dict(row))
     return {'contactrequests': result}
@@ -66,13 +66,11 @@ def create_contact_req(json_data):
         cur_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")     # текущая дата и время
         # INSERT запрос в БД
         db.session.execute(f"INSERT INTO contactrequests "
-                           f"(firstname, lastname, email, reqtype, reqtext, createdAt, updatedAt) "
+                           f"(fullname, email, message, cratedAt, updatedAt) "
                            f"VALUES ("
-                           f"'{json_data['firstname']}', "
-                           f"'{json_data['lastname']}', "
+                           f"'{json_data['fullname']}', "
                            f"'{json_data['email']}', "
-                           f"'{json_data['reqtype']}', "
-                           f"'{json_data['reqtext']}', "
+                           f"'{json_data['message']}', "
                            f"'{cur_time}', "
                            f"'{cur_time}')"
                            )
@@ -99,13 +97,24 @@ def delete_contact_req_by_id(id):
         db.session.rollback()
         return {'message': str(e)}
 
+# Удалить запрос по дате в таблице
+def delete_contact_req_by_date(date):
+    try:
+        # DELETE запрос в БД
+        db.session.execute(f"DELETE FROM contactrequests WHERE cratedAt = '{date}'")
+        db.session.commit()
+        return {'message': "ContactRequest Deleted!"}
+    except Exception as e:
+        db.session.rollback()
+        return {'message': str(e)}
+
 
 # Обновить текст запроса по id в таблице
 def update_contact_req_by_id(id, json_data):
     try:
         cur_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")  # текущая дата и время
         # UPDATE запрос в БД
-        db.session.execute(f"UPDATE contactrequests SET reqtext = '{json_data['reqtext']}', "
+        db.session.execute(f"UPDATE contactrequests SET message = '{json_data['message']}', "
                            f"updatedAt = '{cur_time}' WHERE id = {id}")
         db.session.commit()
         return {'message': "ContactRequest Updated!"}

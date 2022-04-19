@@ -1,11 +1,12 @@
 # -*- coding: utf-8 -*-
 # Подключаем объект приложения Flask из __init__.py
+from . import dbservice
 from labapp import app, db
 # Подключаем библиотеку для "рендеринга" html-шаблонов из папки templates
 from flask import render_template, make_response, request, Response, jsonify, json
 
 import json
-from . import dbservice  
+
 
 """
 
@@ -224,9 +225,34 @@ def post_contact_r():
         return bad_request()
     # Иначе отправляем json-ответ
     else:
-        msg = request.json['fullname'] + ", ваш запрос получен !"
-        return json_response({ 'message': msg })
+        response = dbservice.create_contact_req(request.json)
+        return json_response(response)
 
+@app.route('/api/contact-request/<int:id>', methods=['PUT'])
+# Обработка запроса на обновление записи в БД
+def update_contact_req_by_id(id):
+    # Если в запросе нет данных или неверный заголовок запроса (т.е. нет 'application/json'),
+    # или в данных нет обязательного поля 'reqtext'
+    if not request.json or not 'reqtext' in request.json:
+        # возвращаем стандартный код 400 HTTP-протокола (неверный запрос)
+        return bad_request()
+    # Иначе обновляем запись в БД и отправляем json-ответ
+    else:
+        response = dbservice.update_contact_req_by_id(id, request.json)
+        return json_response(response)
+
+
+@app.route('/api/contact-request/<int:id>', methods=['DELETE'])
+# Обработка запроса на удаление записи в БД по id
+def delete_contact_req_by_id(id):
+    response = dbservice.delete_contact_req_by_id(id)
+    return json_response(response)
+
+@app.route('/api/contact-request/<date>', methods=['DELETE'])
+# Обработка запроса на удаление записи в БД по дате
+def delete_contact_req_by_date(date):
+    response = dbservice.delete_contact_req_by_date(date)
+    return json_response(response)
 """
 
     Реализация response-методов, возвращающих клиенту стандартные коды протокола HTTP
