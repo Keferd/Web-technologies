@@ -9,7 +9,14 @@ from datetime import datetime
     данные модули лучше группировать в отдельном пакете Python, т.е. создавать папку с файлом __init__.py
 """
 
-# ------------------------------- JOKES -------------------------------
+
+"""
+
+
+-------------------------------------------- JOKES --------------------------------------------
+
+
+"""
 
 # Получаем список всех запросов jokes
 def get_jokes_all():
@@ -75,7 +82,14 @@ def create_joke(json_data):
         db.session.rollback()
         return {'message': str(e)}
 
-# ------------------------------- CATS -------------------------------
+
+"""
+
+
+-------------------------------------------- CATS --------------------------------------------
+
+
+"""
 
 # Получаем список всех запросов cats
 def get_cats_all():
@@ -94,14 +108,64 @@ def get_cats_old_all():
     return result
 
 # Получаем строку из cats по id
+def get_cat_by_id(id):
+    result = db.session.execute("SELECT * FROM cats WHERE id='{id}'").fetchall()
+    return dict(result)
 
 # Удаляем строку из cats по id
+def delete_cat_by_id(id):
+    try:
+        db.session.execute(f"DELETE FROM cats WHERE id = {id}")
+        db.session.commit()
+        return {'message': "Cat Deleted!"}
+    except Exception as e:
+        db.session.rollback()
+        return {'message': str(e)}
 
 # Изменяем строку из cats по id
+def update_cat_by_id(id, json_data):
+    try:
+        cur_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        db.session.execute(f"UPDATE cats SET "
+                           f"name = '{json_data['name']}', "
+                           f"content = '{json_data['content']}', "
+                           f"path = '{json_data['path']}', "
+                           f"updatedAt = '{cur_time}' "
+                           f"WHERE id = {id}")
+        db.session.commit()
+        return {'message': "Cat Updated!"}
+    except Exception as e:
+        db.session.rollback()
+        return {'message': str(e)}
 
 # Добавляем строку в cats
+def create_cat(json_data):
+    try:
+        cur_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        db.session.execute(f"INSERT INTO cats "
+                           f"(name, content, path, createdAt, updatedAt) "
+                           f"VALUES ("
+                           f"'{json_data['name']}', "
+                           f"'{json_data['content']}', "
+                           f"'{json_data['path']}', "
+                           f"'{cur_time}', "
+                           f"'{cur_time}')"
+                           )
+        db.session.commit()
+        return {'message': "Cat Created!"}
+    except Exception as e:
+        db.session.rollback()
+        return {'message': str(e)}
 
-# ------------------------------- SERVICES -------------------------------
+
+"""
+
+
+-------------------------------------------- SERVICES --------------------------------------------
+
+
+"""
+
 
 # Получаем список всех запросов services
 def get_services_all():
@@ -120,14 +184,64 @@ def get_services_old_all():
     return result
 
 # Получаем строку из services по id
+def get_services_by_id(id):
+    result = db.session.execute("SELECT * FROM services WHERE id='{id}'").fetchall()
+    return dict(result)
 
 # Удаляем строку из services по id
+def delete_service_by_id(id):
+    try:
+        db.session.execute(f"DELETE FROM services WHERE id = {id}")
+        db.session.commit()
+        return {'message': "Service Deleted!"}
+    except Exception as e:
+        db.session.rollback()
+        return {'message': str(e)}
 
 # Изменяем строку из services по id
+def update_service_by_id(id, json_data):
+    try:
+        cur_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        db.session.execute(f"UPDATE services SET "
+                           f"name = '{json_data['name']}', "
+                           f"content = '{json_data['content']}', "
+                           f"path = '{json_data['path']}', "
+                           f"updatedAt = '{cur_time}' "
+                           f"WHERE id = {id}")
+        db.session.commit()
+        return {'message': "Service Updated!"}
+    except Exception as e:
+        db.session.rollback()
+        return {'message': str(e)}
 
 # Добавляем строку в services
+def create_service(json_data):
+    try:
+        cur_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        db.session.execute(f"INSERT INTO services "
+                           f"(name, content, path, createdAt, updatedAt) "
+                           f"VALUES ("
+                           f"'{json_data['name']}', "
+                           f"'{json_data['content']}', "
+                           f"'{json_data['path']}', "
+                           f"'{cur_time}', "
+                           f"'{cur_time}')"
+                           )
+        db.session.commit()
+        return {'message': "Service Created!"}
+    except Exception as e:
+        db.session.rollback()
+        return {'message': str(e)}
 
-# ------------------------------- CONTACTREQUESTS -------------------------------
+
+"""
+
+
+-------------------------------------------- CONTACTREQUESTS --------------------------------------------
+
+
+"""
+
 
 # Получаем список всех запросов.
 def get_contact_req_all():

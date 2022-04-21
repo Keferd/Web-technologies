@@ -15,6 +15,18 @@ import json
 
 """
 
+
+
+"""
+
+
+-------------------------------------------- СТРАНИЦЫ САЙТА --------------------------------------------
+
+
+"""
+
+
+
 # Обработка запроса к индексной странице
 @app.route('/')
 @app.route('/index')
@@ -47,6 +59,18 @@ def our_services():
 def team():
     return render_template('team.html', title='Команда', pname='TEAM')
 
+
+
+"""
+
+
+-------------------------------------------- JOKES --------------------------------------------
+
+
+"""
+
+
+
 # Обработка GET-запроса на все jokes
 @app.route('/api/jokes', methods=['GET'])
 def get_jokes():
@@ -74,7 +98,7 @@ def update_joke(id):
     if not request.json or not 'name' in request.json or not 'content' in request.json:
         return bad_request()
     else:
-        response = dbservice.update_contact_req_by_id(id, request.json)
+        response = dbservice.update_joke_by_id(id, request.json)
         return json_response(response)
 
 # Обработка DELETE-запроса на jokes по id
@@ -83,17 +107,138 @@ def delete_joke(id):
     joke = dbservice.delete_joke_by_id(id)
     return json_response(joke)
 
+# Обработка POST-запроса на перенос старой таблицы jokes в новую (ДЛЯ ПЕРЕНОСА СТАРОЙ ТАБЛИЦЫ В НОВУЮ)
+@app.route('/api/jokes/copy', methods=['POST'])
+def copy_old_to_jokes():
+    jokes = dbservice.get_jokes_old_all()
+    for item in jokes:
+        dbservice.create_joke(item)
+    return json_response(jokes)
+
+
+
+"""
+
+
+-------------------------------------------- CATS --------------------------------------------
+
+
+"""
+
+
+
 # Обработка GET-запроса на все cats
 @app.route('/api/cats', methods=['GET'])
 def get_cats():
     cats = dbservice.get_cats_all()
     return json_response(cats)
 
+# Обработка GET-запроса на cats по id
+@app.route('/api/cat/<int:id>', methods=['GET'])
+def get_cat(id):
+    cat = dbservice.get_cat_by_id(id)
+    return json_response(cat)
+
+# Обработка POST-запроса на cats по id
+@app.route('/api/cat', methods=['POST'])
+def post_cat():
+    if not request.json or not 'name' in request.json or not 'content' in request.json:
+        return bad_request()
+    else:
+        response = dbservice.create_cat(request.json)
+        return json_response(response)
+
+# Обработка PUT-запроса на cats по id
+@app.route('/api/cat/<int:id>', methods=['PUT'])
+def update_cat(id):
+    if not request.json or not 'name' in request.json or not 'content' in request.json:
+        return bad_request()
+    else:
+        response = dbservice.update_cat_by_id(id, request.json)
+        return json_response(response)
+
+# Обработка DELETE-запроса на cats по id
+@app.route('/api/cat/<int:id>', methods=['DELETE'])
+def delete_cat(id):
+    cat = dbservice.delete_cat_by_id(id)
+    return json_response(cat)
+
+
+# Обработка POST-запроса на перенос старой таблицы cats в новую (ДЛЯ ПЕРЕНОСА СТАРОЙ ТАБЛИЦЫ В НОВУЮ)
+@app.route('/api/cats/copy', methods=['POST'])
+def copy_old_to_cats():
+    cats = dbservice.get_cats_old_all()
+    for item in cats:
+        dbservice.create_cat(item)
+    return json_response(cats)
+
+
+
+"""
+
+
+-------------------------------------------- SERVICES --------------------------------------------
+
+
+"""
+
+
+
 # Обработка GET-запроса на все services
 @app.route('/api/services', methods=['GET'])
 def get_services():
     services = dbservice.get_services_all()
     return json_response(services)
+
+# Обработка GET-запроса на services по id
+@app.route('/api/service/<int:id>', methods=['GET'])
+def get_service(id):
+    service = dbservice.get_service_by_id(id)
+    return json_response(service)
+
+# Обработка POST-запроса на services по id
+@app.route('/api/service', methods=['POST'])
+def post_service():
+    if not request.json or not 'name' in request.json or not 'content' in request.json:
+        return bad_request()
+    else:
+        response = dbservice.create_service(request.json)
+        return json_response(response)
+
+# Обработка PUT-запроса на services по id
+@app.route('/api/service/<int:id>', methods=['PUT'])
+def update_service(id):
+    if not request.json or not 'name' in request.json or not 'content' in request.json:
+        return bad_request()
+    else:
+        response = dbservice.update_service_by_id(id, request.json)
+        return json_response(response)
+
+# Обработка DELETE-запроса на services по id
+@app.route('/api/service/<int:id>', methods=['DELETE'])
+def delete_service(id):
+    service = dbservice.delete_service_by_id(id)
+    return json_response(service)
+
+# Обработка POST-запроса на перенос старой таблицы services в новую (ДЛЯ ПЕРЕНОСА СТАРОЙ ТАБЛИЦЫ В НОВУЮ)
+@app.route('/api/services/copy', methods=['POST'])
+def copy_old_to_services():
+    services = dbservice.get_services_old_all()
+    for item in services:
+        dbservice.create_service(item)
+    return json_response(services)
+
+
+
+"""
+
+
+-------------------------------------------- CONTACTREQUEST --------------------------------------------
+
+
+"""
+
+
 
 # Обработка POST-запроса для демонстрации AJAX
 @app.route('/api/contactrequest', methods=['POST'])
@@ -146,12 +291,8 @@ def delete_contact_req_by_date(date):
     response = dbservice.delete_contact_req_by_date(date)
     return json_response(response)
 
-@app.route('/api/jokes/copy', methods=['POST'])
-def copy_old_to_jokes():
-    jokes = dbservice.get_jokes_old_all()
-    for item in jokes:
-        dbservice.create_joke(item)
-    return json_response(jokes)
+
+
 
 """
 
