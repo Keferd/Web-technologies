@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+    <div class="family__content">
+        <div class="family__content-header">
+        <p>Семья Шлёпы</p>
+        </div>
+        <div class="family__content-separete">
+
+        </div>
+        <div class="family__content-center">
+        <p>Коша́чьи, или ко́шки, или фели́ды (лат. Felidae), — семейство млекопитающих отряда хищных. Наиболее специализированные из хищников, приспособленные к добыванию животной пищи путём подкрадывания, подкарауливания, реже — преследования.</p>
+        </div>
+        <div id="family__content-media" class="family__content-media">
+            <!-- {% for cat in cats %}
+                <div class="family__content-block">
+                    <img class="family__content-img"src="static/images/cats/{{cat['path']}}" alt="{{cat['name']}}">
+                    <p>{{cat['text']}}</p>
+                </div>
+            {% endfor %} -->
+        </div>
+    </div>
+    <link rel="stylesheet" href="static/stylesheets/family.css">
+    <script src="static/javascripts/family_request.js"></script>
+
+{% endblock %}

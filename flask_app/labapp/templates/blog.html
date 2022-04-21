@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+    <div class="blog">  
+        <div class="blog__content">
+
+        <div class="blog__content_fs1">
+            <p>Внимание! Анекдот</p>
+        </div>
+        <div class="blog__content_separete">
+
+        </div>
+        <div class="blog__content_fs2">
+            <p>
+            Сталкер — одна из самых «народных» игр на постсоветском пространстве.
+            Об этом говорит и популярность различных пользовательских модификаций,
+            и бурная реакцию на каждый новый тизер второй части серии.
+            Сегодня даже анекдоты, которые рассказывали сталкеры у костра и в баре, вызывают чувство ностальгии.
+            Лучшие из них мы собрали в этой статье.
+            </p>
+            <br>
+
+            <div id="blog__pages" class="blog__pages">
+            <!-- {% for joke in jokes %}
+                <div class="blog__content-block">
+                    <div class="blog__img-container">
+                    <img class="blog__content-image" src="static/images/blog/Gregory.png" alt="Shlepa">
+                    </div>
+                    <p style="font-weight:bold;">{{joke['name']}}</p>
+                    <br>
+                    <p>{{joke['text']}}
+                    </p>
+                    <br>
+                </div>
+            {% endfor %} -->
+            </div>
+        </div>
+
+        </div>
+    </div>
+    <link rel="stylesheet" href="static/stylesheets/blog.css">
+    <script src="static/javascripts/jokes_request.js"></script>
+
+{% endblock %}
