@@ -9,6 +9,125 @@ from datetime import datetime
     данные модули лучше группировать в отдельном пакете Python, т.е. создавать папку с файлом __init__.py
 """
 
+# ------------------------------- JOKES -------------------------------
+
+# Получаем список всех запросов jokes
+def get_jokes_all():
+    result = []    
+    rows = db.session.execute("SELECT * FROM jokes").fetchall()
+    for row in rows:
+        result.append(dict(row))
+    return {'jokes': result}
+
+# Получаем список всех запросов jokes_old (ДЛЯ ПЕРЕНОСА СТАРОЙ ТАБЛИЦЫ В НОВУЮ)
+def get_jokes_old_all():
+    result = []    
+    rows = db.session.execute("SELECT * FROM jokes_old").fetchall()
+    for row in rows:
+        result.append(dict(row))
+    return result
+
+# Получаем строку из jokes по id
+def get_joke_by_id(id):
+    result = db.session.execute("SELECT * FROM jokes WHERE id='{id}'").fetchall()
+    return dict(result)
+
+# Удаляем строку из jokes по id
+def delete_joke_by_id(id):
+    try:
+        db.session.execute(f"DELETE FROM jokes WHERE id = {id}")
+        db.session.commit()
+        return {'message': "Joke Deleted!"}
+    except Exception as e:
+        db.session.rollback()
+        return {'message': str(e)}
+
+# Изменяем строку из jokes по id
+def update_joke_by_id(id, json_data):
+    try:
+        cur_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        db.session.execute(f"UPDATE jokes SET "
+                           f"name = '{json_data['name']}', "
+                           f"content = '{json_data['content']}', "
+                           f"updatedAt = '{cur_time}' "
+                           f"WHERE id = {id}")
+        db.session.commit()
+        return {'message': "Joke Updated!"}
+    except Exception as e:
+        db.session.rollback()
+        return {'message': str(e)}
+
+# Добавляем строку в jokes
+def create_joke(json_data):
+    try:
+        cur_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        db.session.execute(f"INSERT INTO jokes "
+                           f"(name, content, createdAt, updatedAt) "
+                           f"VALUES ("
+                           f"'{json_data['name']}', "
+                           f"'{json_data['content']}', "
+                           f"'{cur_time}', "
+                           f"'{cur_time}')"
+                           )
+        db.session.commit()
+        return {'message': "Joke Created!"}
+    except Exception as e:
+        db.session.rollback()
+        return {'message': str(e)}
+
+# ------------------------------- CATS -------------------------------
+
+# Получаем список всех запросов cats
+def get_cats_all():
+    result = []    
+    rows = db.session.execute("SELECT * FROM cats").fetchall()
+    for row in rows:
+        result.append(dict(row))
+    return {'cats': result}
+
+# Получаем список всех запросов cats_old (ДЛЯ ПЕРЕНОСА СТАРОЙ ТАБЛИЦЫ В НОВУЮ)
+def get_cats_old_all():
+    result = []    
+    rows = db.session.execute("SELECT * FROM cats_old").fetchall()
+    for row in rows:
+        result.append(dict(row))
+    return result
+
+# Получаем строку из cats по id
+
+# Удаляем строку из cats по id
+
+# Изменяем строку из cats по id
+
+# Добавляем строку в cats
+
+# ------------------------------- SERVICES -------------------------------
+
+# Получаем список всех запросов services
+def get_services_all():
+    result = []    
+    rows = db.session.execute("SELECT * FROM services").fetchall()
+    for row in rows:
+        result.append(dict(row))
+    return {'services': result}
+
+# Получаем список всех запросов services_old (ДЛЯ ПЕРЕНОСА СТАРОЙ ТАБЛИЦЫ В НОВУЮ)
+def get_services_old_all():
+    result = []    
+    rows = db.session.execute("SELECT * FROM services_old").fetchall()
+    for row in rows:
+        result.append(dict(row))
+    return result
+
+# Получаем строку из services по id
+
+# Удаляем строку из services по id
+
+# Изменяем строку из services по id
+
+# Добавляем строку в services
+
+# ------------------------------- CONTACTREQUESTS -------------------------------
 
 # Получаем список всех запросов.
 def get_contact_req_all():
@@ -20,30 +139,6 @@ def get_contact_req_all():
         result.append(dict(row))
     # возвращаем dict, где result - это список с dict-объектов с информацией
     return {'contactrequests': result}
-
-# Получаем список всех запросов jokes
-def get_jokes_all():
-    result = []    
-    rows = db.session.execute("SELECT * FROM jokes").fetchall()
-    for row in rows:
-        result.append(dict(row))
-    return {'jokes': result}
-
-# Получаем список всех запросов cats
-def get_cats_all():
-    result = []    
-    rows = db.session.execute("SELECT * FROM cats").fetchall()
-    for row in rows:
-        result.append(dict(row))
-    return {'cats': result}
-
-# Получаем список всех запросов services
-def get_services_all():
-    result = []    
-    rows = db.session.execute("SELECT * FROM services").fetchall()
-    for row in rows:
-        result.append(dict(row))
-    return {'services': result}
 
 # Получаем запрос с фильтром по id
 def get_contact_req_by_id(id):
