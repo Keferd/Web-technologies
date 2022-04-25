@@ -343,7 +343,13 @@ def create_contact_req(json_data):
         # Подтверждение изменений в БД
         db.session.commit()
         # Возвращаем результат
-        return {'message': "ContactRequest Created!"}
+        result = []    
+        rows = db.session.execute(f"SELECT * FROM contactrequests WHERE userId = '{userId}'").fetchall()
+        for row in rows:
+            result.append(dict(row))
+        return {'contactrequests': result}
+
+        # return {'message': "ContactRequest Created!"}
         # если возникла ошибка запроса в БД
     except Exception as e:
         # откатываем изменения в БД

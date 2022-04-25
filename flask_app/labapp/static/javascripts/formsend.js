@@ -36,50 +36,31 @@ sendbtn.addEventListener("click", function (e) {
             // Возвращаем json-объект из response и получаем данные из поля message
             response.json().then(function(data) {
                 console.log(data)
-                // let statfield = document.getElementById("statusfield");
-                // statfield.textContent = data.message;
-                //Сontact_UsConfirmDialog(data['message'])
-                alert(data['message']);
-                //statfield.textContent.bold();
-                //alert(data.message);
-
-                fetch("/api/contactrequest/userid",
-                {
-                    method: "GET",
-                    headers: {
-                        'Content-Type': 'application/json'
-                    }
-                })
-                .then( request => {
-                    request.json().then(function(data) {
-                        let requests = data['contactrequests'];
-                        pages.innerHTML = `
-                            <caption>Запросы пользователя:</caption>
-                            <tr>
-                            <th>Имя:</th>
-                            <th>email:</th>
-                            <th>Сообщение:</th>
-                            <th>Создано:</th>
-                            <th>Обновлено:</th>
-                            </tr>
-                        `;
-                        for (let id in requests){
-                            pages.innerHTML += `
-                                <tr>
-                                    <td>` + requests[id]['fullname'] + `</td>
-                                    <td>` + requests[id]['email'] + `</td>
-                                    <td>` + requests[id]['message'] + `</td>
-                                    <td>` + requests[id]['cratedAt'] + `</td>
-                                    <td>` + requests[id]['updatedAt'] + `</td>
-                                </tr>
-                            `;
-                        }
-                    });
-                })
-                .catch( error => {
-                    alert(error);
-                    console.error('error:', error);
-                });
+                // alert(data['message']);
+                
+                let requests = data['contactrequests'];
+                pages.innerHTML = `
+                    <caption>Запросы пользователя:</caption>
+                    <tr>
+                    <th>Имя:</th>
+                    <th>email:</th>
+                    <th>Сообщение:</th>
+                    <th>Создано:</th>
+                    <th>Обновлено:</th>
+                    </tr>
+                `;
+                for (let id in requests){
+                    pages.innerHTML += `
+                        <tr>
+                            <td>` + requests[id]['fullname'] + `</td>
+                            <td>` + requests[id]['email'] + `</td>
+                            <td>` + requests[id]['message'] + `</td>
+                            <td>` + requests[id]['cratedAt'] + `</td>
+                            <td>` + requests[id]['updatedAt'] + `</td>
+                        </tr>
+                    `;
+                }
+                
             });
         })
         .catch( error => {
