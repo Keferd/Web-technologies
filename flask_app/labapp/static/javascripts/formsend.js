@@ -42,6 +42,44 @@ sendbtn.addEventListener("click", function (e) {
                 alert(data['message']);
                 //statfield.textContent.bold();
                 //alert(data.message);
+
+                fetch("/api/contactrequest/userid",
+                {
+                    method: "GET",
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                })
+                .then( request => {
+                    request.json().then(function(data) {
+                        let requests = data['contactrequests'];
+                        pages.innerHTML = `
+                            <caption>Запросы пользователя:</caption>
+                            <tr>
+                            <th>Имя:</th>
+                            <th>email:</th>
+                            <th>Сообщение:</th>
+                            <th>Создано:</th>
+                            <th>Обновлено:</th>
+                            </tr>
+                        `;
+                        for (let id in requests){
+                            pages.innerHTML += `
+                                <tr>
+                                    <td>` + requests[id]['fullname'] + `</td>
+                                    <td>` + requests[id]['email'] + `</td>
+                                    <td>` + requests[id]['message'] + `</td>
+                                    <td>` + requests[id]['cratedAt'] + `</td>
+                                    <td>` + requests[id]['updatedAt'] + `</td>
+                                </tr>
+                            `;
+                        }
+                    });
+                })
+                .catch( error => {
+                    alert(error);
+                    console.error('error:', error);
+                });
             });
         })
         .catch( error => {

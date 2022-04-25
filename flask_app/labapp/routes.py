@@ -3,7 +3,8 @@
 from . import dbservice
 from labapp import app, db
 # Подключаем библиотеку для "рендеринга" html-шаблонов из папки templates
-from flask import render_template, make_response, request, Response, jsonify, json
+from flask import render_template, make_response, request, Response, jsonify, json, session, redirect, url_for
+import functools
 
 import json
 
@@ -14,6 +15,36 @@ import json
     здесь реализуется обработка запросов при переходе пользователя на определенные адреса веб-приложения
 
 """
+
+# Считаем куки
+@app.route('/cookie/info', methods=['GET'])
+def cookie_request():
+    testt = session.get('userId')
+    return testt
+
+
+"""
+
+
+-------------------------------------------- ДЕКОРАТОРЫ --------------------------------------------
+
+
+"""
+
+
+
+# Функция-декоратор для проверки авторизации пользователя на странице Контактов
+def contact_us_required(route_func):
+    @functools.wraps(route_func)
+    def decorated_route(*args, **kwargs):
+        # Если не установлен параметр сессии user или значение cookie 'AuthToken' не равно логину пользователя
+        if not session.get('user') or request.cookies.get('AuthToken') != session.get('user'):
+            # перенаправляем на страницу авторизации
+            return redirect(url_for('login'))
+        return route_func(*args, **kwargs)
+    return decorated_route
+
+
 
 
 
@@ -36,6 +67,7 @@ def index():
 
 # Обработка запроса к странице contact-us.html
 @app.route('/contact-us')
+@contact_us_required
 def contact_us():
     return render_template('contact-us.html', title='Контакты', pname='CONTACT')
 
@@ -58,6 +90,74 @@ def our_services():
 @app.route('/team')
 def team():
     return render_template('team.html', title='Команда', pname='TEAM')
+
+# Обработка запроса к странице login.html
+@app.route('/login')
+def login():
+    return render_template('login.html', title='ВХОД', pname='LOGIN')
+
+# Обработка запроса к странице registration.html
+@app.route('/registration')
+def registration():
+    return render_template('registration.html', title='РЕГИСТРАЦИЯ', pname='REGISTRATION')
+
+
+"""
+
+
+-------------------------------------------- ВХОД/РЕГИСТРАЦИЯ --------------------------------------------
+
+
+"""
+
+
+# Страница авторизации
+@app.route('/login', methods=['GET', 'POST'])
+def login_request():
+    # Если POST-запрос
+    if request.method == 'POST':
+        # если нажата кнопка "Зарегистрировать", переадресуем на страницу регистрации
+        if request.form.get('regBtn') == 'true':
+            return redirect(url_for('register'))
+        # иначе запускаем авторизацию по данным формы
+        else:
+            return dbservice.login_user(request.form)
+    else:
+        return render_template('login.html', title='Whitesquare')
+
+
+# Страница регистрации
+@app.route('/register', methods=['GET', 'POST'])
+def register_request():
+    # Если POST-запрос, регистрируем нового пользователя
+    if request.method == 'POST':
+        return dbservice.register_user(request.form)
+    else:
+        return render_template('register.html', title='Whitesquare')
+
+
+
+"""
+
+
+-------------------------------------------- JOKES_FAVORITES --------------------------------------------
+
+
+"""
+
+
+# Обработка GET-запроса на избранные jokes по id пользователя
+@app.route('/api/joke/<int:id>', methods=['GET'])
+def get_favorite_jokes(id):
+    joke = dbservice.get_jokes_favorites(id)
+    return json_response(joke)
+
+# Обработка POST-запроса на избранный jokes
+@app.route('/api/joke/favorite/<int:jokeId>', methods=['POST'])
+def post_favorite_joke(jokeId):
+    userId = session.get('userId')
+    response = dbservice.create_joke_favorite(jokeId, userId)
+    return json_response(response)
 
 
 
@@ -238,7 +338,18 @@ def copy_old_to_services():
 
 """
 
+# Обработка GET-запроса на все contactrequest
+@app.route('/api/contactrequest', methods=['GET'])
+def get_contactrequests():
+    requests = dbservice.get_contact_req_all()
+    return json_response(requests)
 
+# Обработка GET-запроса на все contactrequest
+@app.route('/api/contactrequest/userid', methods=['GET'])
+def get_contactrequests_by_userid():
+    userId = session.get('userId')
+    requests = dbservice.get_contact_req_by_userid(userId)
+    return json_response(requests)
 
 # Обработка POST-запроса для демонстрации AJAX
 @app.route('/api/contactrequest', methods=['POST'])

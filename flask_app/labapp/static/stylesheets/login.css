@@ -1,0 +1,53 @@
+.login__field {
+    background-color: white;
+    min-height: 466px;
+  }
+  
+.login__content {
+    width: 960px;
+    height: 100%;
+    margin: auto;
+  }
+
+.login__form-container {
+    margin-top: 50px;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login__h1 {
+    margin-bottom: 30px;
+}
+
+.login__entry-label {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.login__entry-field {
+    margin-bottom: 30px;
+    height: 36px;
+    font-size: 24px;
+}
+
+.login__submit {
+    min-width: 100px;
+    height: 35px;
+    padding: 0 5px;
+    background-color: white;
+    border-color: black;
+    border-radius: 5px;
+    font-size: 20px;
+}
+
+.login__submit:hover {
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+
+.login__transition {
+    margin-top: 20px;
+}

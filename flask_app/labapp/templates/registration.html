@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+    <div class="login">
+        <div class="login__field">
+            <div class="login__content">
+                <form class="login__form-container" method="POST" action="/register">
+                    <h1 class="login__h1">РЕГИСТРАЦИЯ</h1>
+                    <label class="login__entry-label" for="register__login">Логин:</label>
+                    <input class="login__entry-field" name="register__login" id="register__login" type="text">
+                    <label class="login__entry-label" for="register__password">Пароль:</label>
+                    <input class="login__entry-field" name="register__password" id="register__password" type="password">
+                    <label class="login__entry-label" for="register__email">email:</label>
+                    <input class="login__entry-field" name="register__email" id="register__email" type="email">
+
+                    <input class="login__submit" type="submit" value="Зарегистрироваться">
+                    <a class="login__transition" href="login">Войти</a>
+                </form>
+            </div>
+        </div>
+     </div>
+    <link rel="stylesheet" href="static/stylesheets/login.css">
+
+{% endblock %}

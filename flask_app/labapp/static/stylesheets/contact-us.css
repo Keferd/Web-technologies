@@ -1,10 +1,10 @@
 .contact-us__field {
-  height: 800px;
+  min-height: 800px;
 }
 
 .contact-us__content {
   width: 960px;
-  height: 100%;
+  /* height: 100%; */
   margin: auto;
 
   /* display: flex;
@@ -110,10 +110,36 @@
   color: grey;
 }
 
-
-
 .contact-us__map {
   height: 190px;
   width: 100%;
   background-color: gray;
+}
+
+
+
+.contact-us__requests {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  min-height: 300px;
+}
+
+.contact-us__table {
+  width: 100%;
+  background-color: black;
+}
+
+.contact-us__table caption {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.contact-us__table th {
+  color: white;
+  height: 30px;
+}
+
+.contact-us__table td {
+  background-color: white;
+  padding: 0 5px;
 }

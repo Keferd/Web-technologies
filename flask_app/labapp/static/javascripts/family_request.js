@@ -10,7 +10,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     })
     .then( request => {
-        
         request.json().then(function(data) {
             let cats = data['cats'];
             for (let id in cats){

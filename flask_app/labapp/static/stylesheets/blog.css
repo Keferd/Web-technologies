@@ -64,6 +64,21 @@ background: linear-gradient(40deg,#EECFBA, #C5DDE8);
   margin-top: 31px;
 }
 
+.blog__filters {
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+}
+
+.blog__checkbox {
+  margin-right: 30px;
+}
+
+.blog__button {
+  width: 100px;
+  height: 30px;
+}
+
 .blog__pages{
   display: flex;
   flex-wrap: wrap;

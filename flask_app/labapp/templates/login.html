@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+    <div class="login">
+        <div class="login__field">
+            <div class="login__content">
+                <form class="login__form-container" method="POST" action="/login">
+                    <h1 class="login__h1">ВХОД</h1>
+                    <label class="login__entry-label" for="login__login">Логин:</label>
+                    <input class="login__entry-field" name="login__login" id="login__login" type="text">
+                    <label class="login__entry-label" for="login__password">Пароль:</label>
+                    <input class="login__entry-field" name="login__password" id="login__password" type="password">
+
+                    <input class="login__submit" type="submit" value="Войти">
+                    <a class="login__transition" href="registration">Зарегистрироваться</a>
+                </form>
+            </div>
+        </div>
+     </div>
+    <link rel="stylesheet" href="static/stylesheets/login.css">
+
+{% endblock %}

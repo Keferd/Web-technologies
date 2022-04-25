@@ -16,17 +16,21 @@ document.addEventListener("DOMContentLoaded", () => {
             for (let id in joke){
                 pages.innerHTML += `
                     <div class="blog__content-block">
-                    <div class="blog__img-container">
-                    <img class="blog__content-image" src="static/images/blog/Gregory.png" alt="Shlepa">
-                    </div>
-                    <p style="font-weight:bold;">` + joke[id]['name'] + `</p>
-                    <br>
-                    <p>` + joke[id]['content'] + `
-                    </p>
-                    <br>
+                        <div class="blog__img-container">
+                            <img class="blog__content-image" src="static/images/blog/Gregory.png" alt="Shlepa">
+                        </div>
+                        <button onclick="jokeFavoriteAdd(` + joke[id]['id'] + `)">Добавить</button>
+                        <p style="font-weight:bold;">` + joke[id]['name'] + `</p>
+                        <br>
+                        <p>` + joke[id]['content'] + `
+                        </p>
+                        <br>
                     </div>  
                 `;
             }
+            pages.innerHTML += `
+                <script src="static/javascripts/jokeFavoriteAdd.js"></script>
+            `
         });
     })
     .catch( error => {
